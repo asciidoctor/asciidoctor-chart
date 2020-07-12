@@ -1,3 +1,17 @@
 = Asciidoctor Chart
+// Settings:
+:idprefix:
+:idseparator: -
 
-A set of Asciidoctor extensions that adds a chart block and block macro for including charts in your AsciiDoc document.
+A set of Asciidoctor extensions that adds a chart block and block macro for including charts powered by powered by c3js, chartist, or chartjs in your AsciiDoc document.
+
+== Authors
+
+Asciidoctor Chart was written by https://github.com/mogztter/[Guillaume Grossetie].
+
+== Copyright
+
+Copyright (C) 2014-2020 Guillaume Grossetie
+Free use of this software is granted under the terms of the MIT License.
+
+For the full text of the license, see the <<LICENSE.adoc#,LICENSE>> file.

@@ -1,0 +1,16 @@
+= Chart Block Macro Extension
+
+chart::data.csv[line,engine="chartjs"]
+
+chart::data.csv[bar,600,300,engine="chartist"]
+
+chart::data.csv[height=200,width=500]
+
+chart::data.csv[spline,500,400]
+
+[chart,line]
+....
+January,February,March,April,May,June,July
+28,48,40,19,86,27,90
+65,59,80,81,56,55,40
+....
