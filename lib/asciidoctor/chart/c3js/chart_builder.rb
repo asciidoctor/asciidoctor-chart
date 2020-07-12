@@ -32,6 +32,13 @@ module Asciidoctor
           to_html chart_div, chart_generate_script
         end
 
+        def self.pie raw_data, attrs
+          chart_id = get_chart_id
+          chart_div = create_chart_div chart_id
+          chart_generate_script = chart_pie_script chart_id, raw_data, attrs
+          to_html chart_div, chart_generate_script
+        end
+
         def self.create_chart_div chart_id
           %(<div id="#{chart_id}"></div>)
         end
@@ -168,6 +175,23 @@ module Asciidoctor
             }
           });
           </script>
+          EOS
+        end
+
+        def self.chart_pie_script chart_id, raw_data, attrs
+          chart_height = get_chart_height attrs
+          chart_width = get_chart_width attrs
+          <<~EOS
+					<script>
+					c3.generate({
+						bindto: '##{chart_id}',
+						size: { height: #{chart_height}, width: #{chart_width} },
+						data: {
+							columns: #{raw_data.to_s},
+							type: 'pie'
+						}
+					});
+					</script>
           EOS
         end
 

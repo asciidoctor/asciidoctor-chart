@@ -18,19 +18,23 @@ module Asciidoctor
         type = attrs['type']
         case engine
         when 'c3js'
-          data, labels = C3js::ChartBuilder.prepare_data raw_data
-          case type
-          when 'bar'
-            C3js::ChartBuilder.bar data, labels, attrs
-          when 'line'
-            C3js::ChartBuilder.line data, labels, attrs
-          when 'step'
-            C3js::ChartBuilder.step data, labels, attrs
-          when 'spline'
-            C3js::ChartBuilder.spline data, labels, attrs
+          if type == 'pie'
+            C3js::ChartBuilder.pie raw_data, attrs
           else
-            # By default chart line
-            C3js::ChartBuilder.line data, labels, attrs
+            data, labels = C3js::ChartBuilder.prepare_data raw_data
+            case type
+            when 'bar'
+              C3js::ChartBuilder.bar data, labels, attrs
+            when 'line'
+              C3js::ChartBuilder.line data, labels, attrs
+            when 'step'
+              C3js::ChartBuilder.step data, labels, attrs
+            when 'spline'
+              C3js::ChartBuilder.spline data, labels, attrs
+            else
+              # By default chart line
+              C3js::ChartBuilder.line data, labels, attrs
+            end
           end
         when 'chartist'
           data, labels = Chartist::ChartBuilder.prepare_data raw_data
