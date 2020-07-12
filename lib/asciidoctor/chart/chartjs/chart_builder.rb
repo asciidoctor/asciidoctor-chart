@@ -38,7 +38,7 @@ module Asciidoctor
           chart_init_script = 'var chart = new Chart(ctx).Line(data, {responsive : true});'
           <<~EOS
           #{chart_canvas}
-          <script type="text/javascript">
+          <script>
           window.onload = function() {
           #{chart_init_ctx_script}
           #{chart_init_data_script}

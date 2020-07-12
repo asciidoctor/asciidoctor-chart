@@ -37,7 +37,7 @@ module Asciidoctor
           chart_height = get_chart_height attrs
           chart_width = get_chart_width attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           var options = {
             height: '#{chart_height}',
             colors: ["#72B3CC", "#8EB33B"]
@@ -55,7 +55,7 @@ module Asciidoctor
           chart_height = get_chart_height attrs
           chart_width = get_chart_width attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           var options = {
             height: '#{chart_height}',
             width: '#{chart_width}',

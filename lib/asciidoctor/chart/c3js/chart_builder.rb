@@ -62,7 +62,7 @@ module Asciidoctor
           axis_y_label = get_axis_y_label attrs
           data_names = get_data_names attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           c3.generate({
             bindto: '##{chart_id}',
             size: { height: #{chart_height}, width: #{chart_width} },
@@ -93,7 +93,7 @@ module Asciidoctor
           axis_y_label = get_axis_y_label attrs
           data_names = get_data_names attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           c3.generate({
             bindto: '##{chart_id}',
             size: { height: #{chart_height}, width: #{chart_width} },
@@ -123,7 +123,7 @@ module Asciidoctor
           axis_y_label = get_axis_y_label attrs
           data_names = get_data_names attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           c3.generate({
             bindto: '##{chart_id}',
             size: { height: #{chart_height}, width: #{chart_width} },
@@ -154,7 +154,7 @@ module Asciidoctor
           axis_y_label = get_axis_y_label attrs
           data_names = get_data_names attrs
           <<~EOS
-          <script type="text/javascript">
+          <script>
           c3.generate({
             bindto: '##{chart_id}',
             size: { height: #{chart_height}, width: #{chart_width} },
