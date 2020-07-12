@@ -5,7 +5,7 @@ module Asciidoctor
     class BlockMacroProcessor < ::Asciidoctor::Extensions::BlockMacroProcessor
       use_dsl
       named :chart
-      name_positional_attributes 'type', 'width', 'height'
+      name_positional_attributes 'type', 'width', 'height', 'axis-x-label', 'axis-y-label', 'data-names'
 
       def process parent, target, attrs
         data_path = parent.normalize_asset_path target, 'target'
