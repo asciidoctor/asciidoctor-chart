@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'asciidoctor/extensions'
-require_relative 'chart/block_macro'
-require_relative 'chart/block'
+require_relative 'chart/block_macro_processor'
+require_relative 'chart/block_processor'
 require_relative 'chart/docinfo_processor'
 require_relative 'chart/backend'
 require_relative 'chart/plain_ruby_csv'
@@ -13,7 +13,7 @@ require_relative 'chart/chartist/chart_builder'
 
 Asciidoctor::Extensions.register do
   return unless document.basebackend? 'html'
-  block_macro Asciidoctor::Chart::BlockMacro
+  block_macro Asciidoctor::Chart::BlockMacroProcessor
   block Asciidoctor::Chart::BlockProcessor
   docinfo_processor Asciidoctor::Chart::DocinfoProcessor
 end

@@ -2,7 +2,7 @@
 
 module Asciidoctor
   module Chart
-    module Charist
+    module Chartist
       class ChartBuilder
         def self.bar data, labels, attrs
           chart_id = get_chart_id

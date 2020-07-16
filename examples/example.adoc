@@ -1,18 +1,18 @@
 = Chart Block Macro Extension
 
-chart::data.csv[line,engine="chartjs"]
+chart::sample-data.csv[line,engine="chartjs"]
 
-chart::data.csv[bar,600,300,engine="chartist"]
+chart::sample-data.csv[bar,600,300,engine="chartist"]
 
-chart::data.csv[height=200,width=500]
+chart::sample-data.csv[height=200,width=500]
 
-chart::data.csv[spline,500,400]
+chart::sample-data.csv[spline,500,400]
 
 // Set axis labels (c3js only, see https://c3js.org/samples/axes_label.html)
-chart::sample.csv[step, 500, 400, axis-x-label="X Label", axis-y-label="Y Label"]
+chart::sample-data.csv[step, 500, 400, axis-x-label="X Label", axis-y-label="Y Label"]
 
 // Set data names (c3js only, see https://c3js.org/samples/data_name.html )
-chart::sample.csv[line, data-names="{'0':'Name 1', '1':'Name 2'}"]
+chart::sample-data.csv[line, data-names="{'0':'Name 1', '1':'Name 2'}"]
 
 [chart,line]
 ....
