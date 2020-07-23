@@ -16,4 +16,5 @@ jobs:
         ruby-version: '2.6'
     - run: bundle install
     - run: bundle exec rake lint
+    - run: bundle exec rake spec
     - run: bundle exec rake
