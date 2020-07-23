@@ -5,7 +5,7 @@ module Asciidoctor
     module Chartjs
       class ChartBuilder
         def self.line data, labels, attrs
-          default_colors = [{r:220,g:220,b:220}, {r:151,g:187,b:205}]
+          default_colors = [{ r: 220, g: 220, b: 220 }, { r: 151, g: 187, b: 205 }]
           datasets = data.map do |set|
             color = default_colors[data.index(set) % 2]
             color_rgba = "rgba(#{color[:r]},#{color[:g]},#{color[:b]},1.0)"
@@ -21,11 +21,11 @@ module Asciidoctor
             }
             EOS
           end.join ','
-          # TODO Generate unique id (or read from attributes)
+          # TODO: Generate unique id (or read from attributes)
           chart_id = 'chart' + PlainRubyRandom.uuid
           chart_height = get_chart_height attrs
           chart_width = get_chart_width attrs
-          chart_canvas = %(<div style="width:#{chart_width}px; height:#{chart_height}px"><canvas id="#{chart_id}"></canvas></div>)
+          chart_canvas = %(<div style="width:#{chart_width}px; height:#{chart_height}px"><canvas id="#{chart_id}"></canvas></div>) # rubocop:disable Layout/LineLength
           chart_init_ctx_script = %(var ctx = document.getElementById("#{chart_id}").getContext("2d");)
           chart_init_data_script = <<~EOS
           var data = {
@@ -51,15 +51,15 @@ module Asciidoctor
         def self.prepare_data raw_data
           labels = raw_data[0]
           raw_data.shift
-          return raw_data, labels
+          [raw_data, labels]
         end
 
         def self.get_chart_height attrs
-          (attrs.key? 'height') ? attrs['height'] : '400'
+          attrs.fetch 'height', '400'
         end
 
         def self.get_chart_width attrs
-          (attrs.key? 'width') ? attrs['width'] : '600'
+          attrs.fetch 'width', '600'
         end
       end
     end

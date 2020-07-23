@@ -13,6 +13,7 @@ require_relative 'chart/chartist/chart_builder'
 
 Asciidoctor::Extensions.register do
   return unless document.basebackend? 'html'
+
   block_macro Asciidoctor::Chart::BlockMacroProcessor
   block Asciidoctor::Chart::BlockProcessor
   docinfo_processor Asciidoctor::Chart::DocinfoProcessor

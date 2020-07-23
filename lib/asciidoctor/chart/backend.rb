@@ -14,7 +14,7 @@ module Asciidoctor
       end
 
       def self.process engine, attrs, raw_data
-        # TODO Check that the engine can process the required type (bar, line, step...)
+        # TODO: Check that the engine can process the required type (bar, line, step...)
         type = attrs['type']
         case engine
         when 'c3js'
@@ -49,13 +49,8 @@ module Asciidoctor
           end
         when 'chartjs'
           data, labels = Chartjs::ChartBuilder.prepare_data raw_data
-          case type
-          when 'line'
-            Chartjs::ChartBuilder.line data, labels, attrs
-          else
-            # By default chart line
-            Chartjs::ChartBuilder.line data, labels, attrs
-          end
+          # By default chart line
+          Chartjs::ChartBuilder.line data, labels, attrs
         end
       end
     end
