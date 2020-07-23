@@ -3,6 +3,8 @@
 :idprefix:
 :idseparator: -
 
+image:https://github.com/asciidoctor/asciidoctor-chart/workflows/Ruby/badge.svg[link=https://github.com/asciidoctor/asciidoctor-chart/actions?query=workflow%3ARuby]
+
 A set of Asciidoctor extensions that adds a chart block and block macro for including charts powered by powered by c3js, chartist, or chartjs in your AsciiDoc document.
 
 == Authors
