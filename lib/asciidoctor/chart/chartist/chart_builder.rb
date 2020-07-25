@@ -23,19 +23,18 @@ module Asciidoctor
         end
 
         def self.get_chart_id
-          # TODO Read from attributes ?
+          # TODO: Read from attributes ?
           'chart' + PlainRubyRandom.uuid
         end
 
         def self.prepare_data raw_data
           labels = raw_data[0]
           raw_data.shift
-          return raw_data, labels
+          [raw_data, labels]
         end
 
         def self.chart_bar_script chart_id, data, labels, attrs
           chart_height = get_chart_height attrs
-          chart_width = get_chart_width attrs
           <<~EOS
           <script>
           var options = {
@@ -78,11 +77,11 @@ module Asciidoctor
         end
 
         def self.get_chart_height attrs
-          (attrs.key? 'height') ? attrs['height'] : '400'
+          attrs.fetch 'height', '400'
         end
 
         def self.get_chart_width attrs
-          (attrs.key? 'width') ? attrs['width'] : '600'
+          attrs.fetch 'width', '600'
         end
       end
     end
