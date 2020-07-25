@@ -5,14 +5,14 @@ module Asciidoctor
     module Chartist
       class ChartBuilder
         def self.bar data, labels, attrs
-          chart_id = get_chart_id
+          chart_id = get_chart_id attrs
           chart_div = create_chart_div chart_id
           chart_generate_script = chart_bar_script chart_id, data, labels, attrs
           to_html chart_div, chart_generate_script
         end
 
         def self.line data, labels, attrs
-          chart_id = get_chart_id
+          chart_id = get_chart_id attrs
           chart_div = create_chart_div chart_id
           chart_generate_script = chart_line_script chart_id, data, labels, attrs
           to_html chart_div, chart_generate_script
@@ -22,9 +22,8 @@ module Asciidoctor
           %(<div id="#{chart_id}"class="ct-chart"></div>)
         end
 
-        def self.get_chart_id
-          # TODO: Read from attributes ?
-          'chart' + PlainRubyRandom.uuid
+        def self.get_chart_id attrs
+          attrs.fetch('id', 'chart' + PlainRubyRandom.uuid)
         end
 
         def self.prepare_data raw_data

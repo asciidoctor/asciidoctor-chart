@@ -21,8 +21,7 @@ module Asciidoctor
             }
             EOS
           end.join ','
-          # TODO: Generate unique id (or read from attributes)
-          chart_id = 'chart' + PlainRubyRandom.uuid
+          chart_id = attrs.fetch('id', 'chart' + PlainRubyRandom.uuid)
           chart_height = get_chart_height attrs
           chart_width = get_chart_width attrs
           chart_canvas = %(<div style="width:#{chart_width}px; height:#{chart_height}px"><canvas id="#{chart_id}"></canvas></div>) # rubocop:disable Layout/LineLength
