@@ -24,7 +24,7 @@ module Asciidoctor
         #{C3JS_SCRIPT}
         #{CHARTIST_STYLESHEET}
         #{CHARTIST_SCRIPT}
-        #{CHARTJS_SCRIPT})
+        #{CHARTJS_SCRIPT}
         EOS
       end
     end
