@@ -38,11 +38,11 @@ module Asciidoctor
           <<~EOS
           #{chart_canvas}
           <script>
-          window.onload = function() {
+          window.addEventListener('load', function(event) {
           #{chart_init_ctx_script}
           #{chart_init_data_script}
           #{chart_init_script}
-          }
+          })
           </script>
           EOS
         end
