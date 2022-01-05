@@ -3,11 +3,9 @@
 module Asciidoctor
   module Chart
     module Chartjs
-
       CSS_VALUE_UNIT_RX = /^([+-]?(?:\d+|\d*\.\d+))([a-z]*|%)$/.freeze
 
       class ChartBuilder
-
         class << self
           def line data, labels, attrs
             default_colors = [{ r: 220, g: 220, b: 220 }, { r: 151, g: 187, b: 205 }]
@@ -34,14 +32,12 @@ module Asciidoctor
             end
             maintain_aspect_ratio = chart_height.nil? && chart_width.nil?
             <<~HTML
-              <div style="#{inline_styles.join('; ')}"><canvas id="#{chart_id}"></canvas></div>
+              <div class="chartjs-container" style="#{inline_styles.join('; ')}"><canvas id="#{chart_id}"></canvas></div>
               <script>
               window.addEventListener('load', function(event) {
                 var data = {
                   labels: #{labels.to_s},
-                  datasets: [
-                    #{datasets}
-                  ]
+                  datasets: [#{datasets}]
                 }
                 var chart = new Chart(document.getElementById("#{chart_id}").getContext("2d"), {
                   type: 'line',
