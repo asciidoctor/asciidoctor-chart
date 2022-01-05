@@ -31,3 +31,5 @@ Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
+Gemspec/RequiredRubyVersion:
+  Enabled: false
