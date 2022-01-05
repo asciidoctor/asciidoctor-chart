@@ -23,7 +23,7 @@ module Asciidoctor
         end
 
         def self.get_chart_id attrs
-          attrs.fetch('id', 'chart' + PlainRubyRandom.uuid)
+          attrs.fetch('id', "chart#{PlainRubyRandom.uuid}")
         end
 
         def self.prepare_data raw_data

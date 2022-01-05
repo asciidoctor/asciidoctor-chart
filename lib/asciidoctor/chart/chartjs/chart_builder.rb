@@ -21,7 +21,7 @@ module Asciidoctor
             }
             EOS
           end.join ','
-          chart_id = attrs.fetch('id', 'chart' + PlainRubyRandom.uuid)
+          chart_id = attrs.fetch('id', "chart#{PlainRubyRandom.uuid}")
           chart_height = get_chart_height attrs
           chart_width = get_chart_width attrs
           chart_canvas = %(<div style="width:#{chart_width}px; height:#{chart_height}px"><canvas id="#{chart_id}"></canvas></div>) # rubocop:disable Layout/LineLength
@@ -38,11 +38,11 @@ module Asciidoctor
           <<~EOS
           #{chart_canvas}
           <script>
-          window.onload = function() {
+          window.addEventListener('load', function(event) {
           #{chart_init_ctx_script}
           #{chart_init_data_script}
           #{chart_init_script}
-          }
+          })
           </script>
           EOS
         end

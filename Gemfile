@@ -6,5 +6,5 @@ source 'https://rubygems.org'
 gemspec
 
 group :lint do
-  gem 'rubocop', '~> 0.88.0', require: false
+  gem 'rubocop', '~> 1.24.1', require: false
 end
