@@ -25,6 +25,24 @@ module Asciidoctor
         #{CHARTIST_STYLESHEET}
         #{CHARTIST_SCRIPT}
         #{CHARTJS_SCRIPT}
+        <style>
+          .chartblock {
+            margin-bottom: 1.25em;
+          }
+          .chartblock > .title {
+            text-rendering: optimizeLegibility;
+            text-align: left;
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.45;
+            color: #7a2518;
+            font-weight: 400;
+          }
+          .chartblock > .chartjs-content {
+            position: relative;
+            margin-bottom: 0.25em;
+          }
+        </style>
         EOS
       end
     end

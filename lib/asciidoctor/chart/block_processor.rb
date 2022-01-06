@@ -10,10 +10,8 @@ module Asciidoctor
       parse_content_as :raw
 
       def process parent, reader, attrs
-        engine = Backend.resolve_engine attrs, parent.document
         raw_data = PlainRubyCSV.parse reader.source
-        html = Backend.process engine, attrs, raw_data
-        create_pass_block parent, html, attrs, subs: nil
+        Asciidoctor::Chart::ChartBlock.new parent, raw_data, attrs
       end
     end
   end
