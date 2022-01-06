@@ -28,7 +28,7 @@ module Asciidoctor
               inline_styles.push("height: #{chart_height}")
             end
             if (chart_width = get_width attrs)
-              inline_styles.push("width: #{chart_width}")
+              inline_styles.push("max-width: #{chart_width}")
             end
             maintain_aspect_ratio = chart_height.nil? && chart_width.nil?
             <<~HTML

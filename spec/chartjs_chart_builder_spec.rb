@@ -15,7 +15,7 @@ describe 'Asciidoctor::Chart::Chartjs::ChartBuilder' do
       'height' => '400'
     }
     html = Asciidoctor::Chart::Chartjs::ChartBuilder.line data, labels, attrs
-    (expect html).to include %(<div class="chartjs-container" style="position: relative; height: 400px; width: 600px">)
+    (expect html).to include %(<div class="chartjs-container" style="position: relative; height: 400px; max-width: 600px">) # rubocop:disable Layout/LineLength
   end
   it 'should preserve units when defined on width or height' do
     data = [
@@ -28,7 +28,7 @@ describe 'Asciidoctor::Chart::Chartjs::ChartBuilder' do
       'height' => '20vh'
     }
     html = Asciidoctor::Chart::Chartjs::ChartBuilder.line data, labels, attrs
-    (expect html).to include %(<div class="chartjs-container" style="position: relative; height: 20vh; width: 80%">)
+    (expect html).to include %(<div class="chartjs-container" style="position: relative; height: 20vh; max-width: 80%">)
   end
   it 'should disable maintain aspect ratio when width or height is defined' do
     data = [
