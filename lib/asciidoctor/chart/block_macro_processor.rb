@@ -12,10 +12,8 @@ module Asciidoctor
         read_data = parent.read_asset data_path, warn_on_failure: true, normalize: true
         return if read_data.nil? || read_data.empty?
 
-        engine = Backend.resolve_engine attrs, parent.document
         raw_data = PlainRubyCSV.parse read_data
-        html = Backend.process engine, attrs, raw_data
-        create_pass_block parent, html, attrs, subs: nil
+        Asciidoctor::Chart::ChartBlock.new parent, raw_data, attrs
       end
     end
   end
