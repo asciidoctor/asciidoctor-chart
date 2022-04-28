@@ -4,6 +4,7 @@ require 'asciidoctor/extensions'
 require 'tilt'
 require_relative 'chart/html5_chart_converter_ext'
 require_relative 'chart/registry'
+require_relative 'chart/preprocessor'
 require_relative 'chart/block_macro_processor'
 require_relative 'chart/block_processor'
 require_relative 'chart/docinfo_processor'
@@ -44,6 +45,7 @@ Asciidoctor::Extensions.register do
   else
     register_chart_converter(converter)
   end
+  preprocessor Asciidoctor::Chart::Preprocessor
   block_macro Asciidoctor::Chart::BlockMacroProcessor
   block Asciidoctor::Chart::BlockProcessor
   docinfo_processor Asciidoctor::Chart::DocinfoProcessor
