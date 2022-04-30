@@ -6,20 +6,17 @@ module Asciidoctor
       use_dsl
       # at_location :head
 
-      ASSETS = {
-        c3js: <<~HTML.chomp,
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.css">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.js"></script>
-        HTML
-        chartist: <<~HTML.chomp,
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-          <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-        HTML
-        chartjs: <<~HTML.chomp
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        HTML
-      }.freeze
+      C3JS_DIR_ATTR = 'c3jsdir'
+      C3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/'
+
+      CHARTJS_DIR_ATTR = 'chartjsdir'
+      CHARTJS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/'
+
+      CHARTIST_DIR_ATTR = 'chartistdir'
+      CHARTIST_DEFAULT_PATH = 'https://cdn.jsdelivr.net/chartist.js/latest/'
+
+      D3JS_DIR_ATTR = 'd3jsdir'
+      D3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/'
 
       DEFAULT_STYLE = <<~HTML.chomp
         <style>
@@ -42,9 +39,42 @@ module Asciidoctor
         </style>
       HTML
 
-      def process doc
+      def process(doc)
         engines = doc.x_chart[:engines]
-        (engines.map {|engine| ASSETS[engine.to_sym] }.to_a + [DEFAULT_STYLE]).join("\n")
+        (engines.map {|engine| send(engine, doc) }.to_a + [DEFAULT_STYLE]).join "\n"
+      end
+
+      private
+
+      def get_path(doc, attr_name, default_path, asset_to_include)
+        doc.normalize_web_path asset_to_include, (doc.attr attr_name, default_path), false
+      end
+
+      def create_script_directive(doc, attr_name, default_path, asset_to_include)
+        %(<script src="#{get_path doc, attr_name, default_path, asset_to_include}"></script>)
+      end
+
+      def create_link_css_directive(doc, attr_name, default_path, asset_to_include)
+        %(<link rel="stylesheet" href="#{get_path doc, attr_name, default_path, asset_to_include}">)
+      end
+
+      def chartjs(doc)
+        create_script_directive(doc, CHARTJS_DIR_ATTR, CHARTJS_DEFAULT_PATH, 'chart.min.js')
+      end
+
+      def chartist(doc)
+        result = []
+        result << create_link_css_directive(doc, CHARTIST_DIR_ATTR, CHARTIST_DEFAULT_PATH, 'chartist.min.css')
+        result << create_script_directive(doc, CHARTIST_DIR_ATTR, CHARTIST_DEFAULT_PATH, 'chartist.min.js')
+        result
+      end
+
+      def c3js(doc)
+        result = []
+        result << create_link_css_directive(doc, C3JS_DIR_ATTR, C3JS_DEFAULT_PATH, 'c3.min.css')
+        result << create_script_directive(doc, D3JS_DIR_ATTR, D3JS_DEFAULT_PATH, 'd3.min.js')
+        result << create_script_directive(doc, C3JS_DIR_ATTR, C3JS_DEFAULT_PATH, 'c3.min.js')
+        result
       end
     end
   end
