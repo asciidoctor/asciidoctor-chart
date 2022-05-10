@@ -68,6 +68,31 @@ image::./examples/chart-chartjs.png[]
 
 For more examples, see {uri-repo}/blob/master/examples/example.adoc[example.adoc].
 
+=== Configuration
+
+[cols="1s,1,3"]
+|===
+|Attribute{nbsp}Name |Value(s)|Description
+
+|c3jsdir
+|<file\|URL>
+|Overrides c3.js directory, where the following files `c3.min.css` and `c3.min.js` are expected. Default is `https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/`.
+
+|chartjsdir
+|<file\|URL>
+|Overrides chart.js directory, where the following file `chart.min.js` is expected. Default is `https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/`.
+
+|chartistdir
+|<file\|URL>
+|Overrides chartist.js directory, where the following files `chartist.min.css` and `chartist.min.js` are expected. Default is `https://cdn.jsdelivr.net/chartist.js/latest/`.
+
+
+|d3jsdir
+|<file\|URL>
+|Overrides d3.js directory, where the following file `d3.min.js` is expected. Default is `https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/`.
+|===
+
+
 == Authors
 
 {project-name} was written by https://github.com/mogztter/[Guillaume Grossetie].
