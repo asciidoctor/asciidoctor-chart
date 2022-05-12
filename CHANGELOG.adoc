@@ -1,0 +1,16 @@
+= Asciidoctor Chart Changelog
+:icons: font
+:uri-repo: https://github.com/asciidoctor/asciidoctor-chart
+
+This document provides a high-level view of the changes introduced in Asciidoctor Chart by release.
+For an even more detailed look at what has changed, refer to the {uri-repo}/commits/[commit history] on GitHub.
+
+The format is based on https://keepachangelog.com/en/1.0.0/[Keep a Changelog],
+and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Versioning].
+
+== Unreleased
+
+=== icon:rocket[] Added
+
+* Introduce a changelog (#30)
+* Added support for using the JavaScript libraries offline (#25)
