@@ -13,3 +13,4 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 === icon:rocket[] Added
 
 * Introduce a changelog (#30)
+* Added support for using the JavaScript libraries offline (#25)
