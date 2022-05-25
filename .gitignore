@@ -1,3 +1,10 @@
 /.bundle/
 /Gemfile.lock
 /pkg/
+/examples/.bundle
+/examples/vendor
+/examples/*.html
+/examples/Gemfile.lock
+/.idea
+/out
+/vendor
