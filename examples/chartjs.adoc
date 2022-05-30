@@ -1,0 +1,3 @@
+= Chart.js Chart Block Macro Extension
+
+chart::sample-data.csv[line,engine="chartjs",id="chartjs-line"]

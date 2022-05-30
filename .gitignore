@@ -8,3 +8,10 @@
 /.idea
 /out
 /vendor
+/node_modules
+/cypress/snapshots/diff/**/*.png
+/cypress/snapshots/actual/**/*.png
+/cypress/videos/*.mp4
+/cypress/screenshots/
+/cypress/reports
+/cypress/results
