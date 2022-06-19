@@ -51,8 +51,8 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
       ....
     ADOC
     output = Asciidoctor.convert(input, standalone: true)
-    (expect output.strip).to include %(<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-<script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    (expect output.strip).to include %(<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/0.11.x/chartist.min.css">
+<script src="https://cdn.jsdelivr.net/chartist.js/0.11.x/chartist.min.js"></script>
 <style>
   .chartblock {
     margin-bottom: 1.25em;

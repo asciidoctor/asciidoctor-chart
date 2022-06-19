@@ -84,7 +84,7 @@ For more examples, see {uri-repo}/blob/master/examples/example.adoc[example.adoc
 
 |chartistdir
 |<file\|URL>
-|Overrides chartist.js directory, where the following files `chartist.min.css` and `chartist.min.js` are expected. Default is `https://cdn.jsdelivr.net/chartist.js/latest/`.
+|Overrides chartist.js directory, where the following files `chartist.min.css` and `chartist.min.js` are expected. Default is `https://cdn.jsdelivr.net/chartist.js/0.11.x/`.
 
 
 |d3jsdir

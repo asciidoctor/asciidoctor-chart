@@ -14,3 +14,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 
 * Introduce a changelog (#30)
 * Added support for using the JavaScript libraries offline (#25)
+
+=== icon:heartbeat[] Changed
+
+* Use 0.11.x as default version for Chartist.js instead of latest (#28)
