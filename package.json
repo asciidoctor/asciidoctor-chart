@@ -2,12 +2,12 @@
   "name": "asciidoctor-chart",
   "private": true,
   "scripts": {
-    "convert:examples": "bundle exec asciidoctor -a !webfonts -a docinfo=shared -r ./lib/asciidoctor-chart examples/*.adoc",
+    "convert:examples": "bundle exec asciidoctor -a stylesheet! -a !webfonts -a docinfo=shared -r ./lib/asciidoctor-chart examples/*.adoc",
     "cy:run": "npx cypress run",
     "cy:open": "npx cypress open",
-    "cy:visual-regression-update-base": "npm run convert:examples && npx cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base",
+    "cy:visual-regression-update-base": "npm run convert:examples && npx cypress run -b chrome --env type=base --config screenshotsFolder=cypress/snapshots/base",
     "precy:visual-regression": "npm run convert:examples",
-    "cy:visual-regression": "npx cypress run --env type=actual",
+    "cy:visual-regression": "npx cypress run -b chrome --env type=actual",
     "test": "npm run cy:visual-regression"
   },
   "devDependencies": {
