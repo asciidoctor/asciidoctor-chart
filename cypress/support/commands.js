@@ -3,7 +3,7 @@ const beforeCompareSnapshotCommand = require('./commands/beforeCompareSnapshotCo
 
 // noinspection JSCheckFunctionSignatures
 compareSnapshotCommand({
-    "errorThreshold": 0.01,
+    "errorThreshold": 0.02,
     "capture": "fullPage",
 });
 beforeCompareSnapshotCommand(

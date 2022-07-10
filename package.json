@@ -1,12 +1,12 @@
 {
   "name": "asciidoctor-chart",
+  "private": true,
   "scripts": {
-    "bundle:examples:asciidoctor": "bundle exec asciidoctor -r asciidoctor-chart examples/*.adoc",
-    "bundle:examples:install": "cd examples && bundle install",
+    "convert:examples": "bundle exec asciidoctor -r ./lib/asciidoctor-chart examples/*.adoc",
     "cy:run": "npx cypress run",
     "cy:open": "npx cypress open",
     "cy:visual-regression-update-base": "npx cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base",
-    "precy:visual-regression": "npm run bundle:examples:install && npm run bundle:examples:asciidoctor",
+    "precy:visual-regression": "npm run convert:examples",
     "cy:visual-regression": "npx cypress run --env type=actual",
     "test": "npm run cy:visual-regression"
   },
