@@ -7,7 +7,7 @@ module Asciidoctor
       # at_location :head
 
       C3JS_DIR_ATTR = 'c3jsdir'
-      C3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/'
+      C3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/'
 
       CHARTJS_DIR_ATTR = 'chartjsdir'
       CHARTJS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/'
@@ -16,7 +16,7 @@ module Asciidoctor
       CHARTIST_DEFAULT_PATH = 'https://cdn.jsdelivr.net/npm/chartist@0.11.x/dist/'
 
       D3JS_DIR_ATTR = 'd3jsdir'
-      D3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/'
+      D3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/'
 
       DEFAULT_STYLE = <<~HTML.chomp
         <style>
