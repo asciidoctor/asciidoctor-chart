@@ -4,6 +4,7 @@
 /examples/.bundle
 /examples/vendor
 /examples/*.html
+!/examples/docinfo.html
 /examples/Gemfile.lock
 /.idea
 /out
