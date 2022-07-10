@@ -13,7 +13,7 @@ module Asciidoctor
       CHARTJS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/'
 
       CHARTIST_DIR_ATTR = 'chartistdir'
-      CHARTIST_DEFAULT_PATH = 'https://cdn.jsdelivr.net/chartist.js/0.11.x/'
+      CHARTIST_DEFAULT_PATH = 'https://cdn.jsdelivr.net/npm/chartist@0.11.x/dist/'
 
       D3JS_DIR_ATTR = 'd3jsdir'
       D3JS_DEFAULT_PATH = 'https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/'

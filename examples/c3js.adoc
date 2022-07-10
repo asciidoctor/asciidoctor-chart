@@ -1,8 +1,4 @@
-= Chart Block Macro Extension
-
-chart::sample-data.csv[line,engine="chartjs"]
-
-chart::sample-data.csv[bar,600,300,engine="chartist"]
+= C3.js Chart Block Macro Extension
 
 chart::sample-data.csv[height=200,width=500]
 

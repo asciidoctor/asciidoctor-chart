@@ -1,0 +1,3 @@
+= Chartist.js Chart Block Macro Extension
+
+chart::sample-data.csv[bar,600,300,engine="chartist"]

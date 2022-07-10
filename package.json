@@ -1,0 +1,20 @@
+{
+  "name": "asciidoctor-chart",
+  "private": true,
+  "scripts": {
+    "convert:examples": "bundle exec asciidoctor -a stylesheet! -a !webfonts -a docinfo=shared -r ./lib/asciidoctor-chart examples/*.adoc",
+    "cy:run": "npx cypress run",
+    "cy:open": "npx cypress open",
+    "cy:visual-regression-update-base": "npm run convert:examples && npx cypress run -b chrome --env type=base --config screenshotsFolder=cypress/snapshots/base",
+    "precy:visual-regression": "npm run convert:examples",
+    "cy:visual-regression": "npx cypress run -b chrome --env type=actual",
+    "test": "npm run cy:visual-regression"
+  },
+  "devDependencies": {
+    "cypress": "10.0.3",
+    "cypress-mochawesome-reporter": "^3.1.0",
+    "cypress-multi-reporters": "^1.6.0",
+    "cypress-visual-regression": "1.7.0",
+    "mocha-junit-reporter": "^2.0.2"
+  }
+}
