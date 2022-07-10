@@ -36,7 +36,7 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
     margin-bottom: 0.25em;
   }
 </style>)
-    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/chartist.js/)
+    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/npm/chartist/)
     (expect output.strip).not_to include %(<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/)
   end
   it 'should append only the required styles and scripts (chartist.js)' do
@@ -51,8 +51,8 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
       ....
     ADOC
     output = Asciidoctor.convert(input, standalone: true)
-    (expect output.strip).to include %(<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/0.11.x/chartist.min.css">
-<script src="https://cdn.jsdelivr.net/chartist.js/0.11.x/chartist.min.js"></script>
+    (expect output.strip).to include %(<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist@0.11.x/dist/chartist.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chartist@0.11.x/dist/chartist.min.js"></script>
 <style>
   .chartblock {
     margin-bottom: 1.25em;
@@ -145,7 +145,7 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
     margin-bottom: 0.25em;
   }
 </style>)
-    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/chartist.js/)
+    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/npm/chartist)
   end
   it 'if c3jsdir is defined, should append the required styles and scripts relative based (C3.js)' do
     input = <<~ADOC
@@ -183,7 +183,7 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
     margin-bottom: 0.25em;
   }
 </style>)
-    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/chartist.js/)
+    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/npm/chartist)
   end
   it 'if chartistdir is defined, should append the required styles and scripts relative based (chartist.js)' do
     input = <<~ADOC
@@ -220,7 +220,7 @@ describe 'Asciidoctor::Chart::DocinfoProcessor' do
     margin-bottom: 0.25em;
   }
 </style>)
-    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/chartist.js/)
+    (expect output.strip).not_to include %(<script src="https://cdn.jsdelivr.net/npm/chartist)
     (expect output.strip).not_to include %(<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/)
   end
 end
