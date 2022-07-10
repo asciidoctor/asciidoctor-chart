@@ -1,4 +1,4 @@
-name: Ruby
+name: CI
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         bundler-cache: true
     - uses: actions/setup-node@v3
       with:
-        node-version: 14
+        node-version: 16
         cache: 'npm'
     - run: bundle install
     - run: bundle exec rake lint
@@ -26,7 +26,7 @@ jobs:
     - run: node -v
     - run: npm -v
     - run: npm ci
-    - run: npm test
+    - run: npm t
     - uses: actions/upload-artifact@v3
       if: ${{ always() }}
       with:

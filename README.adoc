@@ -9,7 +9,7 @@
 :idprefix:
 :idseparator: -
 
-image:https://github.com/asciidoctor/asciidoctor-chart/workflows/Ruby/badge.svg[link=https://github.com/asciidoctor/asciidoctor-chart/actions?query=workflow%3ARuby]
+image:https://github.com/asciidoctor/asciidoctor-chart/workflows/CI/badge.svg[link=https://github.com/asciidoctor/asciidoctor-chart/actions?query=workflow%3ACI]
 image:https://img.shields.io/gem/v/asciidoctor-chart?include_prereleases[link=https://rubygems.org/search?query=asciidoctor-chart]
 
 A set of Asciidoctor extensions that adds a chart block and block macro for including charts powered by https://c3js.org/[C3.js], https://gionkunz.github.io/chartist-js/[Chartist], or https://www.chartjs.org/[Chart.js] in your AsciiDoc document.
