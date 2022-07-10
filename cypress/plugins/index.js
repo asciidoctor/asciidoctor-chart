@@ -11,4 +11,10 @@ module.exports = (on, config) => {
       launchOptions.args.push('--force-color-profile=srgb');
     }
   });
+
+  return {
+    browsers: config.browsers.filter(
+      (b) => b.family === 'chromium' && b.name !== 'electron'
+    ),
+  };
 };
