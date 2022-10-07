@@ -10,11 +10,23 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 
 == Unreleased
 
+## [1.0.0] - 2022-10-07
+### Added
+
 === icon:rocket[] Added
 
 * Introduce a changelog (#30)
 * Added support for using the JavaScript libraries offline (#25)
+* Add captioned title on charts (#18)
+* Improved documentation
+* Added attributes to define chart resources directory (#26)
+* Introduce visual regression tests (#34)
 
 === icon:heartbeat[] Changed
 
 * Use 0.11.x as default version for Chartist.js instead of latest (#28)
+* Update c3.js defaults to latest version 0.7.20 (#32) 
+
+=== icon:wrench[] Fixed
+
+* Fixed ")" in top left corner
