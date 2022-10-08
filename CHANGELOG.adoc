@@ -34,4 +34,3 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Fixed issue (#12) that we can only have one chartjs graph per page with (#13)
 * Include assets (styles, scripts)  when an chart engine is used (#24)
 * Fixed issue with chart.js graph overlaping text when width is specified (#8) with (#17)
-
