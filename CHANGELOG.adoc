@@ -17,7 +17,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Added support for using the JavaScript libraries offline (#25)
 * Add captioned title on charts (#18)
 * Improved documentation
-* Added attributes to define chart resources directory (#26)
+* Add attributes to define chart resources directory (#26)
 * Introduce visual regression tests (#34)
 
 === icon:heartbeat[] Changed
