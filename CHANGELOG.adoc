@@ -27,7 +27,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Upgrade Chart.js from 1.0.2 to 3.7.0 and update code accordingly (#17)
 * Use https protocol (instead of http) when loading scripts from cdnjs.cloudflare.com (#17)
 * Apply RuboCop to asciidoctor-chart.gemspec (#17)
-* Add rubygems_mfa_required in gemspec (#17)
+* Enable multi-factor authentication when publishing to https://rubygems.org/ (#17)
 
 === icon:wrench[] Fixed
 
