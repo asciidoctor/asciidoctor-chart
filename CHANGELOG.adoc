@@ -11,7 +11,9 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 == Unreleased
 
 
-=== icon:rocket[] Added
+== 1.0.0 (2022-10-08)
+
+=== ✨ Added
 
 * Introduce a changelog (#30)
 * Add support for using the JavaScript libraries offline (#25)
@@ -20,7 +22,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Add attributes to define chart resources directory (#26)
 * Introduce visual regression tests (#34)
 
-=== icon:heartbeat[] Changed
+=== 🎨 Changed
 
 * Use 0.11.x as default version for Chartist.js instead of latest (#28)
 * Update c3.js defaults to latest version 0.7.20 (#32) 
@@ -29,7 +31,7 @@ and this project adheres to https://semver.org/spec/v2.0.0.html[Semantic Version
 * Apply RuboCop to asciidoctor-chart.gemspec (#17)
 * Enable multi-factor authentication when publishing to https://rubygems.org/ (#17)
 
-=== icon:wrench[] Fixed
+=== 🐞 Fixed
 
 * Fix an issue to allow more than one Chart.js graphs per page (#13)
 * Include assets (styles, scripts)  when an chart engine is used (#24)
