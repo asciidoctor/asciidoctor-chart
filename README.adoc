@@ -35,7 +35,7 @@ ifndef::env-site[You can also <<development,run the code from source>> if you wa
 To install {project-name}, first make sure you have satisfied the <<Prerequisites,prerequisites>>.
 Then, install the gem from RubyGems.org using the following command:
 
- $ gem install asciidoctor-chart --pre
+ $ gem install asciidoctor-chart
 
 === Enable the Extension
 
