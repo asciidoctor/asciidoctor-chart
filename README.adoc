@@ -99,7 +99,7 @@ For more examples, see {uri-repo}/blob/master/examples/example.adoc[example.adoc
 
 == Copyright
 
-Copyright (C) 2014-2020 Guillaume Grossetie
+Copyright (C) 2014-present Guillaume Grossetie
 Free use of this software is granted under the terms of the MIT License.
 
 For the full text of the license, see the <<LICENSE.adoc#,LICENSE>> file.
