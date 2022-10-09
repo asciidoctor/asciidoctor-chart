@@ -13,7 +13,7 @@ module Asciidoctor
                                          'engine' => engine,
                                          'data-raw' => data
                                        })
-        super parent, :chart, { source: nil, attributes: block_attributes, subs: nil }
+        super parent, :convert_chart, { source: nil, attributes: block_attributes, subs: nil }
         @title = title
         assign_caption(caption, 'figure')
       end
