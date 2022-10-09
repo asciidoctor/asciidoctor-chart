@@ -16,6 +16,16 @@ jobs:
         run: |
           bundle install
           bundle exec rake
+      - name: Increase version number
+        run: |
+          VERSION=$(git tag --list --sort=version:refname 'v*' | tail -1)
+          sed -i "5s/.*/    VERSION = '$VERSION'/" lib/asciidoctor/chart/version.rb
+      - name: Commit & Push updated version.rb
+        run: |
+          git add .
+          git commit -m "Updated version in version.rb"
+          git fetch origin master
+          git push origin HEAD:master
       - name: Configure credentials
         run: |
           mkdir -p $HOME/.gem
